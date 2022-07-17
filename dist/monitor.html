@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>CryptoBal</title>
+	<meta name="description" content="Monitor your Crypto balance" />
+	<link rel="shortcut icon" type="image/png" href="images/logo.png"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/tailwind.min.css">
+	<link rel="stylesheet" href="css/index.css" />
+	<script src="js/header.js"></script>
+	<script src="js/chart.js"></script>
+</head>
+<body class="bg-gray-800">
+	<div class="p-12 relative">
+		<div>
+      <dl class=" w-full bg-gray-700 pt-5 px-4 pb-5 sm:pt-6 sm:px-6 shadow rounded-lg">
+				<div class="flex justify-center">
+					<div class='relative overflow-hidden'>
+						<dt>
+							 <div class='absolute p-2'><img class='h-10 w-10 rounded-full' src='images/cryptos/USDT.png' /></div>
+							 <p class='ml-16 text-sm font-medium text-gray-400 truncate'>Total</p>
+						</dt>
+						<dd class='ml-16 flex items-baseline'>
+							 <p id="total" class='text-2xl font-semibold text-red-600'>$0.00</p>
+						</dd>
+				 </div>
+				</div>
+      </dl>
+		</div>
+    <div>
+      <dl id="crypto-assets" class="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+      </dl>
+    </div>
+
+		<div id="graph" class="hidden md:block mt-5 mx-auto shadow-lg max-w-7xl rounded-lg overflow-hidden">
+			<canvas class="p-10 bg-gray-700" id="chart"></canvas>
+		</div>
+
+	</div>
+	<script src="js/monitor.js"></script>
+</body>
+</html>

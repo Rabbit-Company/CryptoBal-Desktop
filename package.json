@@ -1,0 +1,14 @@
+{
+  "name": "cryptobal",
+  "scripts": {
+    "tauri": "tauri",
+    "build": "npx tailwindcss -i ./tailwind.css -o ./dist/css/tailwind.min.css"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^1.0.2"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^1.0.4",
+    "tailwindcss": "^3.1.6"
+  }
+}
