@@ -13,7 +13,6 @@ const {appWindow} = window.__TAURI__.window;
 document.addEventListener('keydown', async (e) => {
   e.preventDefault();
   if (e.key === "F11") {
-    console.log(await appWindow.isFullscreen());
     await appWindow.setFullscreen(!(await appWindow.isFullscreen()));
   }
 });

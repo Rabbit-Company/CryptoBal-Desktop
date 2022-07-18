@@ -49,7 +49,7 @@
       }
     },
     "security": {
-      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self'; connect-src https://api.binance.com wss://fstream.binance.com; font-src 'self'; frame-src 'self'; img-src 'self'; media-src 'self'; worker-src 'none'; frame-ancestors 'none';"
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self'; connect-src https://api.binance.com wss://fstream.binance.com; font-src 'self'; frame-src 'self'; img-src 'self'; media-src 'self'; worker-src 'none';"
     },
     "updater": {
       "active": false
