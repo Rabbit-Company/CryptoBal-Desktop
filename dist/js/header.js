@@ -11,8 +11,8 @@ document.addEventListener('contextmenu', e => e.preventDefault());
 const {appWindow} = window.__TAURI__.window;
 
 document.addEventListener('keydown', async (e) => {
-  e.preventDefault();
   if (e.key === "F11") {
+    e.preventDefault();
     await appWindow.setFullscreen(!(await appWindow.isFullscreen()));
   }
 });

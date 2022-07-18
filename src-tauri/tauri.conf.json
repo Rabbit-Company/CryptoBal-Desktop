@@ -20,8 +20,8 @@
     },
     "bundle": {
       "active": true,
-      "category": "DeveloperTool",
-      "copyright": "",
+      "category": "Utility",
+      "copyright": "© 2022 Rabbit Company LLC, All rights reserved.",
       "deb": {
         "depends": []
       },
