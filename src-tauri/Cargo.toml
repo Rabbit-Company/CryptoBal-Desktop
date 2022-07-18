@@ -1,11 +1,11 @@
 [package]
-name = "app"
-version = "0.1.0"
-description = "A Tauri App"
-authors = ["you"]
-license = ""
+name = "cryptobal"
+version = "1.0.0"
+description = "Monitor your Crypto balance with style."
+authors = ["Rabbit Company LLC"]
+license = "GPL-3.0"
 repository = ""
-default-run = "app"
+default-run = "cryptobal"
 edition = "2021"
 rust-version = "1.57"
 
