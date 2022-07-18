@@ -33,7 +33,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.rabbit_company.cryptobal",
+      "identifier": "com.rabbit-company.cryptobal",
       "longDescription": "Monitor your Crypto balance with style.",
       "macOS": {
         "entitlements": null,
