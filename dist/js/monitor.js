@@ -4,6 +4,8 @@ var jsonPrices = fetchPrices();
 var lastPrices = new Map();
 var prices = new Map();
 
+const stableCoins = ["USDT", "BUSD"];
+
 const IsNumeric = (num) => /^-{0,1}\d*\.{0,1}\d+$/.test(num);
 
 // Settings
@@ -54,16 +56,28 @@ function startWebSocket(){
 	socket.addEventListener('message', function (event) {
 		jsonPrices = JSON.parse(event.data);
 		cryptos.forEach(crypto => {
-			for(let i = 0; i < jsonPrices.length; i++){
-				let symbol = crypto + "USDT";
-				let symbol2 = jsonPrices[i].s;
-				if(symbol != symbol2) continue;
-				lastPrices.set(crypto, prices.get(crypto));
-				prices.set(crypto, jsonPrices[i].p);
+			for(let i = 0; i < stableCoins.length; i++){
+				if(webSocketGetPrice(jsonPrices, crypto, stableCoins[i])) break;
+				lastPrices.set(crypto, 0);
+				prices.set(crypto, 0);
 			}
 		});
 		updateAssets();
 	});
+}
+
+function webSocketGetPrice(jsonPrices, crypto, fiat){
+	for(let i = 0; i < jsonPrices.length; i++){
+		let symbol = crypto + fiat;
+		let symbol2 = jsonPrices[i].s;
+		if(symbol != symbol2){
+			if(i == (jsonPrices.length-1)) return false;
+		}else{
+			lastPrices.set(crypto, prices.get(crypto));
+			prices.set(crypto, jsonPrices[i].p);
+			return true;
+		}
+	}
 }
 
 function fetchPrices(){
@@ -78,15 +92,27 @@ function fetchPrices(){
 
 function getPrices(){
 	cryptos.forEach(crypto => {
-		for(let i = 0; i < jsonPrices.length; i++){
-			let symbol = crypto + "USDT"; 
-			let symbol2 = jsonPrices[i].symbol;
-			if(symbol != symbol2) continue;
-			lastPrices.set(crypto, prices.get(crypto));
-			prices.set(crypto, jsonPrices[i].price);
+		for(let i = 0; i < stableCoins.length; i++){
+			if(getPrice(crypto, stableCoins[i])) break;
+			lastPrices.set(crypto, 0);
+			prices.set(crypto, 0);
 		}
 	});
 	updateAssets();
+}
+
+function getPrice(crypto, fiat){
+	for(let i = 0; i < jsonPrices.length; i++){
+		let symbol = crypto + fiat; 
+		let symbol2 = jsonPrices[i].symbol;
+		if(symbol != symbol2){
+			if(i == (jsonPrices.length-1)) return false;
+		}else{
+			lastPrices.set(crypto, prices.get(crypto));
+			prices.set(crypto, jsonPrices[i].price);
+			return true;
+		}
+	}
 }
 
 let cryptos = Object.keys(localStorage).filter(isCrypto).sort();

@@ -1,6 +1,6 @@
 [package]
 name = "cryptobal"
-version = "1.0.0"
+version = "2.0.0"
 description = "Monitor your Crypto balance with style."
 authors = ["Rabbit Company LLC"]
 license = "GPL-3.0"
