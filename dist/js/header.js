@@ -14,5 +14,8 @@ document.addEventListener('keydown', async (e) => {
   if (e.key === "F11") {
     e.preventDefault();
     await appWindow.setFullscreen(!(await appWindow.isFullscreen()));
-  }
+  }else if(e.key === "Escape"){
+		e.preventDefault();
+		history.back();
+	}
 });

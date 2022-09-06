@@ -9,7 +9,7 @@
   },
   "package": {
     "productName": "cryptobal",
-    "version": "2.0.1"
+    "version": "3.0.0"
   },
   "tauri": {
     "allowlist": {
@@ -52,7 +52,7 @@
       }
     },
     "security": {
-      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self'; connect-src https://api.binance.com wss://fstream.binance.com; font-src 'self'; frame-src 'self'; img-src 'self'; media-src 'self'; worker-src 'none';"
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'self'; connect-src https://api.binance.com wss://fstream.binance.com https://api.kucoin.com https://api.coingecko.com https://api.exchange.coinbase.com https://api.wazirx.com https://api.coincap.io wss://ws.coincap.io; font-src 'self'; frame-src 'self'; img-src 'self'; manifest-src 'self'; media-src 'self'; worker-src 'none';"
     },
     "updater": {
       "active": false

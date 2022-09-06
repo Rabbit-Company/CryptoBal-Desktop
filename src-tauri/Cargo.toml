@@ -1,10 +1,10 @@
 [package]
 name = "cryptobal"
-version = "2.0.1"
+version = "3.0.0"
 description = "Monitor your Crypto balance with style."
 authors = ["Rabbit Company LLC"]
 license = "GPL-3.0"
-repository = ""
+repository = "https://github.com/Rabbit-Company/CryptoBal-Desktop"
 default-run = "cryptobal"
 edition = "2021"
 rust-version = "1.57"
